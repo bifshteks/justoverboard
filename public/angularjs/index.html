@@ -108,27 +108,41 @@
 				</div>
 				<!-- MUSIC LIST -->
 				<div class="all-music-list">
-					<ol class="music-list">
-						<li class="">
+
+					<table class="table">
+						<tr class="col" ng-repeat="track in tracks">
+							<td>Name: {{ track.name }}</td>
+							<td>Time: {{ track.duration }}</td>
+							<td>Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
+							<td>Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
+							<td>BPM: {{ track.bpm }}</td>
+							<td>Buy for: {{ track.cost | currency }}</td>
+						</tr>
+					</table>
+
+
+					<!-- <ol class="music-list">
+						<li ng-repeat="track in tracks">
 							<div class="track-art-and-name">
 								<img src="" alt="">
-								<span>Song band - song name</span>
+								<span>{{ track.name }}</span>
 							</div>
 							<div class="track-info">
 								<span>
-									Time 03:37
+
+									Time: {{ track.duration }}
 								</span>
 								<span>
-									BPM 120
+									BPM {{ track.bpm }}
 								</span>
 							</div>
 							<div class="track-buy">
-								<button class="btn-primary btn"></button>
+								<button class="btn-primary btn">Buy for {{ track.cost }}</button>
 							</div>
 						</li>
 						
 
-					</ol>
+					</ol> -->
 				</div>
 
 				

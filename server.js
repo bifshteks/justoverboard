@@ -8,7 +8,7 @@
 
     // configuration =================
 
-    mongoose.connect('mongodb://justjosanych:letmegetintomydb@justoverboard-shard-00-00-44qd7.mongodb.net:27017,justoverboard-shard-00-01-44qd7.mongodb.net:27017,justoverboard-shard-00-02-44qd7.mongodb.net:27017/test?ssl=true&replicaSet=justoverboard-shard-0&authSource=admin');     // connect to mongoDB database on modulus.io
+    mongoose.connect('mongodb://justjosanych:letmegetintomydb@justoverboard-shard-00-02-44qd7.mongodb.net:27017/test?ssl=true&replicaSet=justoverboard-shard-0&authSource=admin');     // connect to mongoDB database on modulus.io
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
@@ -23,20 +23,20 @@
     var trackTypeSchema = new mongoose.Schema({
         tracktype: String,
         file: { mime: String, bin: Buffer },
-        cost: { type: Number, required: true, min: 0},
+        cost: { type: Number, min: 0},
     })
 
     var stackCostSchema = new mongoose.Schema({
         stackTitle: String,
-        cost: { type: Number, required: true, min: 0},
+        cost: { type: Number, min: 0},
     })
 
 
 
     var trackSchema = new mongoose.Schema({
         name: { type: String, required: true},
-        duration: { type: Number, required: true, min: 0},
-        bpm: { type: Number, required: true, min: 0},
+        duration: { type: Number, min: 0},
+        bpm: { type: Number, min: 0},
         ganre: [String],
         tags: [String],
         files: [trackTypeSchema],
@@ -54,7 +54,7 @@
     // routes ======================================================================
 
     // api ---------------------------------------------------------------------
-    // get all todos
+    // get all tracks
     app.get('/api/tracks', function(req, res) {
 
         // use mongoose to get all todos in the database

@@ -3,7 +3,7 @@ $(document).ready(function(){
 		if (!$('.menu-item-name').hasClass('is-closing')) {
 			$('.menu-item-name').addClass('menu-is-active')
 			$('.menu-item-name').removeClass('menu-is-not-active')
-			console.log('over')
+			// console.log('over')
 		}
 		
 	})
@@ -14,7 +14,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$('.menu-item-name').removeClass('is-closing')
 		}, 500)
-		console.log('out')
+		// console.log('out')
 	})
 	console.log('just')
 
