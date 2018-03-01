@@ -86,7 +86,7 @@
 			</ol>
 		</div>
 		<!-- ALL CONTENT -->
-		<div class="all-content container-fluid">
+		<div class="all-content">
 			<!-- HEADER -->
 			<div class="row header-row">
 				<header class="col-md-12">
@@ -111,13 +111,13 @@
 				<input type="text" class="input" ng-model="songName">
 					<button class="btn btn-lg btn-primary" ng-click="createTrack()">Create</button>
 					<table class="table">
-						<tr class="col" ng-repeat="track in tracks | filter:searchExpression">
-							<td>Name: {{ track.name }}</td>
-							<td>Time: {{ track.duration }}</td>
-							<td>Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
-							<td>Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
-							<td>BPM: {{ track.bpm }}</td>
-							<td>Buy for: {{ track.cost | currency }}</td>
+						<tr   ng-repeat="track in tracks | filter:searchExpression">
+							<td class="col-sm-2">Name: {{ track.name }}</td>
+							<td class="col-sm-2">Time: {{ track.duration | timeNormalize }}</td>
+							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
+							<td class="col-sm-2">Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
+							<td class="col-sm-2">BPM: {{ track.bpm }}</td>
+							<td class="col-sm-2">Buy for: {{ track.cost  }} <img src="./static/img/rub.png" style="height: 10px;"></td>
 						</tr>
 					</table>
 

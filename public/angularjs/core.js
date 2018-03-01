@@ -1,4 +1,31 @@
-var JOApp = angular.module('joApp', []);
+angular.module('joApp', [])
+    .controller('mainController', mainController)
+    .filter('timeNormalize', timeNormalize)
+    .filter('russianCurrency', russianCurrency)
+
+
+function _isNumeric(n){
+    return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+function timeNormalize(){
+    return function(timeInSec){
+        if ( timeInSec && _isNumeric(timeInSec)){
+            var sec = timeInSec % 60
+            console.log(sec)
+            sec = sec === 0 ? sec + '0' : sec
+            console.log(sec) 
+            var timeNormalDisplay = Math.floor(timeInSec / 60) + ':' + sec;
+            return timeNormalDisplay
+        }
+    }
+}
+
+function russianCurrency(){
+    return function(cost){
+        return cost + '&#8381;'
+    }
+}
 
 
 function mainController($scope, $http) {

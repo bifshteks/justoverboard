@@ -77,49 +77,49 @@
                         bpm: 120,
                         ganre: ['Lo-fi hip hop', 'death core'],
                         tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        cost: 200
                     },{
                         name: 'angel',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 230,
+                        bpm: 110,
+                        ganre: ['Classic rock'],
+                        tags: ['brutal', 'relax'],
+                        cost: 1500
                     },{
                         name: 'Corbon',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 180,
+                        bpm: 100,
+                        ganre: ['RnB', 'Rap'],
+                        tags: ['speed', 'games', 'cars', 'new wave'],
+                        cost: 1000
                     },{
                         name: 'From hell to heaven',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 315,
+                        bpm: 125,
+                        ganre: ['Classic rock', 'death core'],
+                        tags: ['60th', 'like doors'],
+                        cost: 300
                     },{
                         name: 'what am i',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 205,
+                        bpm: 165,
+                        ganre: ['rythmical', 'thoughtsfull music'],
+                        tags: ['yeah boy', 'think about it',  'real talk'],
+                        cost: 3100
                     },{
                         name: 'if not this then what',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 165,
+                        bpm: 90,
+                        ganre: ['depressive'],
+                        tags: ['listen and die'],
+                        cost: 700
                     },{
                         name: 'for what is worth',
-                        duration: 200,
-                        bpm: 120,
-                        ganre: ['Lo-fi hip hop', 'death core'],
-                        tags: ['cool', 'chill', 'anime'],
-                        cost: 3000
+                        duration: 153,
+                        bpm: 95,
+                        ganre: ['indie-rock'],
+                        tags: ['placebo forever', 'brayan molko'],
+                        cost: 5000
                     },
                 ]); // return all todos in JSON format
         // });
