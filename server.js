@@ -8,8 +8,8 @@
 
     // configuration =================
 
-    mongoose.connect('mongodb://justjosanych:letmegetintomydb@justoverboard-shard-00-02-44qd7.mongodb.net:27017/test?ssl=true&replicaSet=justoverboard-shard-0&authSource=admin');     // connect to mongoDB database on modulus.io
-
+    mongoose.connect('mongodb://admin:hjccbz98@sl-eu-fra-2-portal.1.dblayer.com:17627/compose?authSource=admin&ssl=true');     // connect to mongoDB database on modulus.io
+    // console.log('mongoose connect' , testqq)
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
@@ -51,6 +51,12 @@
 
     var Track = mongoose.model('Track', trackSchema, 'Tracks')
 
+    var JustTrack = mongoose.model('JustTrack', {
+        name: String
+    })
+
+    // console.log('Track model: ', Track, '#######################')
+
     // routes ======================================================================
 
     // api ---------------------------------------------------------------------
@@ -58,32 +64,88 @@
     app.get('/api/tracks', function(req, res) {
 
         // use mongoose to get all todos in the database
-        Track.find(function(err, todos) {
+        // JustTrack.find(function(err, tracks) {
 
-            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-            if (err)
-                res.send(err)
+        //     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        //     if (err)
+        //         res.send(err)
 
-            res.json(todos); // return all todos in JSON format
-        });
+            res.json(tracksArray = [
+                    {
+                        name: 'Lake',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'angel',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'Corbon',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'From hell to heaven',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'what am i',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'if not this then what',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },{
+                        name: 'for what is worth',
+                        duration: 200,
+                        bpm: 120,
+                        ganre: ['Lo-fi hip hop', 'death core'],
+                        tags: ['cool', 'chill', 'anime'],
+                        cost: 3000
+                    },
+                ]); // return all todos in JSON format
+        // });
     });
 
     // create todo and send back all todos after creation
     app.post('/api/tracks', function(req, res) {
-
-        // create a todo, information comes from AJAX request from Angular
-        Track.create({
-            text : req.body.text,
-            done : false
+        console.log('req.body ', req.body)
+        // create a track, information comes from AJAX request from Angular
+        // console.log('justtrack ', JustTrack)
+        JustTrack.create({
+            name : req.body.name,
         }, function(err, track) {
-            if (err)
+            if (err) {
+                console.log('ops error POST')
                 res.send(err);
-
-            // get and return all the todos after you create another
-            Track.find(function(err, tracks) {
-                if (err)
+            }
+            console.log('1 success')
+            // get and return all the tracks after you create another
+            JustTrack.find(function(err, tracks) {
+                if (err){
                     res.send(err)
+                    console.log('ops error POST2')
+                }
                 res.json(tracks);
+                console.log('2 success')
             });
         });
 
@@ -119,4 +181,5 @@
 
 
 
-    module.exports = app;
+    module.exports.app = app;
+    module.exports.mongoose = mongoose;

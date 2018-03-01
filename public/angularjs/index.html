@@ -101,16 +101,17 @@
 							<div class="input-group-prepend">
 					        	<div class="input-group-text" id="basic-addon1">@</div>
 					        </div>
-							<input class="form-control form-control-lg  search-input" type="text" placeholder="What are you searching for?" aria-describedby="basic-addon1" aria-label="@">
+							<input class="form-control form-control-lg  search-input" type="text" placeholder="What are you searching for?" aria-describedby="basic-addon1" aria-label="@" ng-model="searchExpression">
 						</div>
 					</div>
 					
 				</div>
 				<!-- MUSIC LIST -->
 				<div class="all-music-list">
-
+				<input type="text" class="input" ng-model="songName">
+					<button class="btn btn-lg btn-primary" ng-click="createTrack()">Create</button>
 					<table class="table">
-						<tr class="col" ng-repeat="track in tracks">
+						<tr class="col" ng-repeat="track in tracks | filter:searchExpression">
 							<td>Name: {{ track.name }}</td>
 							<td>Time: {{ track.duration }}</td>
 							<td>Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>

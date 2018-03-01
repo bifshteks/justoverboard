@@ -1,62 +1,15 @@
 var JOApp = angular.module('joApp', []);
 
+
 function mainController($scope, $http) {
-    tracksArray = [
-        {
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },{
-            name: 'Lake',
-            duration: 200,
-            bpm: 120,
-            ganre: ['Lo-fi hip hop', 'death core'],
-            tags: ['cool', 'chill', 'anime'],
-            cost: 3000
-        },
-    ]
-    $scope.formData = {};
-    $scope.tracks = tracksArray;
+    
+    // $scope.formData = {};
+    // $scope.tracks = tracksArray;
 
     // when landing on the page, get all todos and show them
+
+
+
 
     $http.get('/api/tracks')
         .success(function(data) {
@@ -64,7 +17,7 @@ function mainController($scope, $http) {
             console.log(data);
         })
         .error(function(data) {
-            console.log('Error: ' + data);
+            console.log('Error get: ' + data);
         });
 
 
