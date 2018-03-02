@@ -6,11 +6,16 @@
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
 
 	<title>JustOverboard</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="./angularjs/home/home.controller.js"></script>
+	<script src="./angularjs/common/directives/joheader.directive.js"></script>
+	<script src="./angularjs/common/directives/sidebar.directive.js"></script>
 	<script src="./angularjs/core.js"></script>
+
 	<!-- Latest compiled JavaScript -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -28,74 +33,20 @@
 	<!-- LESS js -->
 	<!---<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script> -->
 </head>
-<body ng-controller="mainController">
+<body >
 	<div class="wrapper ">
 
-		<div class="all-side-bar-menu">
-			<!-- NAV -->
-			<ol class="menu-list">
-				<li>
-					<a href="#">
-						<div class="menu-list-item-icon">
-							<span class=" glyphicon glyphicon-home  menu-item-icon"></span>
-						</div>
-						<div class="menu-item-name">
-							<div class="menu-item-name-text">
-								Главная
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="menu-list-item-icon">
-							<span class=" glyphicon glyphicon-music  menu-item-icon"></span>
-						</div>
-						<div class="menu-item-name">
-							<div class="menu-item-name-text">
-								Список треков
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="menu-list-item-icon">
-							<span class=" glyphicon glyphicon-shopping-cart  menu-item-icon"></span>
-						</div>
-						<div class="menu-item-name">
-							<div class="menu-item-name-text">
-								Корзина
-							</div>
-						</div>
-					</a>
-				</li>
-			</ol>
-			<!-- SOCIAL -->
-			<ol class="social-media-list">
-				<li>
-					<a href="#">
-						<span></span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span></span>
-					</a>
-				</li>
-			</ol>
+		<div class="all-side-bar-menu" >
 		</div>
 		<!-- ALL CONTENT -->
 		<div class="all-content">
 			<!-- HEADER -->
-			<div class="row header-row">
-				<header class="col-md-12">
-					<h1>JustOverboard {{ 2 + 3 }}</h1>
-				</header>
+			<div class="row header-row" >
 			</div>
 			<!-- CONTENT -->
-			<div class="main-content">
-				<div class="lead-image table ">
+			<div class="main-content" >
+				
+			<!-- 	<div class="lead-image table ">
 					<div class="all-search table-cell">
 						<div class="input-group input-group-lg search-input-wrapper col-md-6 col-md-offset-3">
 							<div class="input-group-prepend">
@@ -105,9 +56,9 @@
 						</div>
 					</div>
 					
-				</div>
+				</div> -->
 				<!-- MUSIC LIST -->
-				<div class="all-music-list">
+				<!-- <div class="all-music-list">
 				<input type="text" class="input" ng-model="songName">
 					<button class="btn btn-lg btn-primary" ng-click="createTrack()">Create</button>
 					<table class="table">
@@ -119,32 +70,10 @@
 							<td class="col-sm-2">BPM: {{ track.bpm }}</td>
 							<td class="col-sm-2">Buy for: {{ track.cost  }} <img src="./static/img/rub.png" style="height: 10px;"></td>
 						</tr>
-					</table>
+					</table> -->
 
 
-					<!-- <ol class="music-list">
-						<li ng-repeat="track in tracks">
-							<div class="track-art-and-name">
-								<img src="" alt="">
-								<span>{{ track.name }}</span>
-							</div>
-							<div class="track-info">
-								<span>
-
-									Time: {{ track.duration }}
-								</span>
-								<span>
-									BPM {{ track.bpm }}
-								</span>
-							</div>
-							<div class="track-buy">
-								<button class="btn-primary btn">Buy for {{ track.cost }}</button>
-							</div>
-						</li>
-						
-
-					</ol> -->
-				</div>
+				<!-- </div> -->
 
 				
 

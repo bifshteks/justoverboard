@@ -182,4 +182,3 @@
 
 
     module.exports.app = app;
-    module.exports.mongoose = mongoose;
