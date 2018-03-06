@@ -14,12 +14,11 @@
 				<div class="all-music-list">
 				<input type="text" class="input" ng-model="songName">
 					<button class="btn btn-lg btn-primary" ng-click="createTrack()">Create</button>
-					<p>tracks {{ HomeController.tracks }} | {{ controller.tracks  }} | {{ controller.test }}</p>
-					<p>trks {{ trks }} | {{ controller.trks  }}</p>
-					<table class="table" ng-repeat="track in controller.tracks">
-						<tr ng-repeat="track in tracks | filter:searchExpression">
+					<p>tracks {{ tracks  }}
+					<table class="table" >
+						<tr ng-repeat="track in tracks">
 							<td class="col-sm-2">Name: {{ track.name }}</td>
-							<td class="col-sm-2">Time: {{ track.duration | timeNormalize }}</td>
+							<td class="col-sm-2">Time: {{ track.duration  }}</td>
 							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
 							<td class="col-sm-2">Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
 							<td class="col-sm-2">BPM: {{ track.bpm }}</td>

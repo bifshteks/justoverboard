@@ -19,33 +19,21 @@
 
 class HomeController {
     constructor($scope, $http) {
-        this.tracks = this.init($scope, $http).then((data)=>(data));
-        console.log(this.tracks)
+        this.test = 'teststring'
+        this.init($scope, $http);
     }
 
 
     async init($scope, $http){
-        return 
+        var self = this;
+ 
         $http.get('/static/data/tracks.json').then(
-                    (tracksJson)=>{ console.log('tracksJson')}, 
-                    (err)=>console.log(err))
-
-        // async function getTracks(url){
-        //     try {
-        //         var tracksJSON = await $http.get(url);
-        //         var tracks = await JSON.parse(tracksJSON)
-        //         console.log(tracks)
-        //         return tracks
-        //     } catch(err) {
-        //         console.log('Error get: ', err)
-        //     }    
-        // }    
-
-
-
-        // var result = await getTracks('/static/data/tracks.json')
-        // await console.log('res', result)
-        // return result
+            (resp)=>{
+                $scope.tracks = resp.data
+            }, 
+            (err)=>{
+                console.log(err)
+            })
     }
 }
 
