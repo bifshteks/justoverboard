@@ -1,4 +1,18 @@
 <!-- NG-VIEW \\\\\\\\\\\\\\\\\\\\\\\\\ -->
+ <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            
+            That's a modal body, body!
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" >ng- click="$ctrl .ok()">OK</button>
+            <button class="btn btn-warning" type="button" >ng- click="$ctrl. cancel()">Cancel</button>
+        </div>
+    </script>
+    <!-- ////////////////////////////////////////////////////////////// -->
 				<div class="lead-image table ">
 					<div class="all-search table-cell">
 						<div class="input-group input-group-lg search-input-wrapper col-md-6 col-md-offset-3">
@@ -17,12 +31,17 @@
 					<p>tracks {{ tracks  }}
 					<table class="table" >
 						<tr ng-repeat="track in tracks">
-							<td class="col-sm-2">Name: {{ track.name }}</td>
-							<td class="col-sm-2">Time: {{ track.duration  }}</td>
+							<td class="col-sm-2">Name: {{ track.name }}(id={{ track.id }})</td>
+							<td class="col-sm-2">Time: {{ track.duration | sec2min }}</td>
 							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
 							<td class="col-sm-2">Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
 							<td class="col-sm-2">BPM: {{ track.bpm }}</td>
-							<td class="col-sm-2">Buy for: {{ track.cost  }} <img src="./static/img/rub.png" style="height: 10px;"></td>
+							<td class="col-sm-2">
+								<button ng-click="controller.open(track.name, track.id)">
+									Buy for: {{ track.cost  }} 
+									<img src="./static/img/rub.png" style="height: 10px;"/>
+								</button>
+							</td>
 						</tr>
 					</table>
 				</div>
