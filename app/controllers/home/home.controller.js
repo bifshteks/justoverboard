@@ -9,7 +9,7 @@ class HomeController {
     }
 
 
-    async init($scope, $http){
+    init($scope, $http){
         var self = this;
  
         $http.get('/static/data/tracks.json').then(
