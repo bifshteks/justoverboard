@@ -5,7 +5,7 @@ class HomeController {
     constructor($scope, $http, $document, $uibModal) {
         this.test = 'teststring'
         this.init($scope, $http);
-        this.open = (trackName, trackID)=> this.popupOpen($uibModal, trackName, trackID)
+        this.open = (trackName, trackID) => this.popupOpen($uibModal, trackName, trackID)
     }
 
 
@@ -36,9 +36,8 @@ class HomeController {
             appendTo: parentElem,
 
             resolve: {
-                trackName: ()=>trackName,
-                trackID: ()=>trackID
-                    
+                trackName: () => trackName,
+                trackID: () => trackID
             }
         });
 

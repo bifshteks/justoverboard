@@ -35,8 +35,9 @@ class ModalController {
 
 
 
-		chosen.push([trackID, option])
+		chosen.push({id:trackID, option:option})
 		ls.setItem('chosen_items', JSON.stringify(chosen))
+		console.log('lsssss', ls)
 
 
 	}

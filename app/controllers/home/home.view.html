@@ -14,7 +14,7 @@
 				<!-- MUSIC LIST -->
 				<div class="all-music-list">
 					<table class="table" >
-						<tr ng-repeat="track in tracks">
+						<tr ng-repeat="track in tracks | filter:searchExpression">
 							<td class="col-sm-2">Name: {{ track.name }}(id={{ track.id }})</td>
 							<td class="col-sm-2">Time: {{ track.duration | sec2min }}</td>
 							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
