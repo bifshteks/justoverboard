@@ -1,0 +1,16 @@
+<div style="height:80px;background-color:#b73764;position:absolute;bottom:0;position: fixed;width: 100%;padding: 15px">
+	<div class="col" style="">
+		<button class="btn btn-primary" style="width:50px;height:50px;border-radius:50%;float:left;font-size: 23px;" play-pause-toggle data-play="<span class=&quot;glyphicon glyphicon-play&quot;></span>" data-pause="<span class=&quot;glyphicon glyphicon-pause&quot;></span>">
+			<span class="glyphicon glyphicon-play"></span>
+		</button>
+	</div>
+
+
+	<div style="height: 30px;
+width: 90%;
+border: 1px solid #cccccc;" seek-track>
+        <div style="height: 30px;
+width: 0;
+background-color: #E0EAF1;" ng-style="{{{'width': ( progress + '%' ) } }}">{{ progress }}</div>
+	</div>
+</div>

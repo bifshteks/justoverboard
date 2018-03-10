@@ -12,13 +12,20 @@
 					
 				</div>
 				<!-- MUSIC LIST -->
-				<div class="all-music-list">
+				<div class="all-music-list" style="min-height: 400px">
+					<sound-manager></sound-manager>
 					<table class="table" >
 						<tr ng-repeat="track in tracks | filter:searchExpression">
-							<td class="col-sm-2">Name: {{ track.name }}(id={{ track.id }})</td>
+
+							<td class="col-sm-2">
+								<button class="btn btn-primary" style="width:30px;height:30px;border-radius:50%;" music-player="play" add-song="track" >
+									<span class="glyphicon glyphicon-play"></span>
+								</button>
+								Name: {{ track.title }}(id={{ track.id }})
+							</td>
 							<td class="col-sm-2">Time: {{ track.duration | sec2min }}</td>
-							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp</span> </td>
-							<td class="col-sm-2">Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp</span> </td>
+							<td class="col-sm-2">Ganre: <span ng-repeat="gan in track.ganre">{{ gan }},&nbsp;</span> </td>
+							<td class="col-sm-2">Tags: <span ng-repeat="tag in track.tags">{{ tag }},&nbsp;</span> </td>
 							<td class="col-sm-2">BPM: {{ track.bpm }}</td>
 							<td class="col-sm-2">
 								<button class="btn btn-lg btn-primary" ng-click="controller.open(track.name, track.id)">
@@ -26,6 +33,7 @@
 									<img src="./static/img/rub.png" style="height: 10px;"/>
 								</button>
 							</td>
+							
 						</tr>
 					</table>
 				</div>
