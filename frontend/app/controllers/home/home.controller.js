@@ -45,7 +45,7 @@ class HomeController {
     init($scope, $http){
         
  
-        $http.get('/static/data/tracks.json').then(
+        $http.get('/tracks').then(
             (resp)=>{
                 $scope.tracks = resp.data
             }, 
