@@ -13,8 +13,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+print(BASE_PROJECT_DIR, '################################################################@#@#@@#@#@#@#@#@#@#')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -58,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-		os.path.join(BASE_DIR, 'frontend/app'),
+		os.path.join(BASE_PROJECT_DIR, 'backend/justoverboard/colstatic'),
 	],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,7 +124,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'app')
-STATIC_DIRS = [
-	os.path.join(BASE_DIR, 'app/static'),
+STATIC_ROOT = os.path.join(BASE_PROJECT_DIR, 'backend/justoverboard/colstatic')
+print('base', STATIC_ROOT)
+STATICFILES_DIRS = [
+	os.path.join(BASE_PROJECT_DIR, 'frontend/app/static'),
+	os.path.join(BASE_PROJECT_DIR, 'frontend/app')
 ]
+
+print(os.path.join(BASE_PROJECT_DIR, 'frontend/app'), '$$$$$$$')

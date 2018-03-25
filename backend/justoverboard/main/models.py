@@ -1,6 +1,6 @@
 from django.db import models
 
-class Track:
+class Track(models.Model):
 	title = models.CharField(max_length=255, verbose_name='Название')
 	duration = models.IntegerField(verbose_name='Длительность')
 	bpm = models.IntegerField(verbose_name='bpm')

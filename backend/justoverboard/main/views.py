@@ -5,7 +5,7 @@ from django.core import serializers
 
 
 class MainView(TemplateView):
-    template_name = './index.html'
+    template_name = 'index.html'
 
 def get_tracks(request):
     tracks = [
